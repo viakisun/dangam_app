@@ -170,6 +170,73 @@ class AppTheme {
   }
 
   // ============================================================================
+  // 블랙 테마 (Black Theme)
+  // ============================================================================
+
+  /// 블랙 테마 설정
+  /// 사용처: 검은색 배경의 극도로 어두운 테마
+  static ThemeData get blackTheme {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+
+      // 색상 스키마
+      colorScheme: _blackColorScheme,
+
+      // 텍스트 테마
+      textTheme: _blackTextTheme,
+
+      // 앱바 테마
+      appBarTheme: _appBarTheme.copyWith(
+        backgroundColor: AppColors.black,
+        foregroundColor: AppColors.white,
+      ),
+
+      // 카드 테마
+      cardTheme: _cardTheme.copyWith(
+        color: AppColors.darkAccent,
+      ),
+
+      // 버튼 테마
+      elevatedButtonTheme: _elevatedButtonTheme,
+      textButtonTheme: _textButtonTheme,
+      outlinedButtonTheme: _outlinedButtonTheme,
+
+      // 입력 필드 테마
+      inputDecorationTheme: _inputDecorationTheme.copyWith(
+        fillColor: AppColors.darkAccent,
+        hintStyle: AppTypography.bodyMedium.copyWith(
+          color: AppColors.grey,
+        ),
+      ),
+
+      // 하단 네비게이션 테마
+      bottomNavigationBarTheme: _bottomNavigationBarTheme.copyWith(
+        backgroundColor: AppColors.black,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.grey,
+      ),
+
+      // 슬라이더 테마
+      sliderTheme: _sliderTheme,
+
+      // 체크박스 테마
+      checkboxTheme: _checkboxTheme,
+
+      // 스위치 테마
+      switchTheme: _switchTheme,
+
+      // 다이얼로그 테마
+      dialogTheme: _dialogTheme.copyWith(
+        backgroundColor: AppColors.darkAccent,
+      ),
+
+      // 스캐폴드 테마
+      scaffoldBackgroundColor: AppColors.black,
+    );
+  }
+
+  // ============================================================================
   // 색상 스키마 (Color Schemes)
   // ============================================================================
 
@@ -193,6 +260,24 @@ class AppTheme {
 
   /// 다크 모드 색상 스키마
   static const ColorScheme _darkColorScheme = ColorScheme.dark(
+    primary: AppColors.primary,
+    onPrimary: AppColors.white,
+    secondary: AppColors.secondary,
+    onSecondary: AppColors.white,
+    tertiary: AppColors.darkAccent,
+    onTertiary: AppColors.white,
+    error: AppColors.error,
+    onError: AppColors.white,
+    surface: AppColors.black,
+    onSurface: AppColors.white,
+    surfaceContainerHighest: AppColors.darkAccent,
+    onSurfaceVariant: AppColors.grey,
+    outline: AppColors.divider,
+    shadow: AppColors.shadowLight,
+  );
+
+  /// 블랙 모드 색상 스키마
+  static const ColorScheme _blackColorScheme = ColorScheme.dark(
     primary: AppColors.primary,
     onPrimary: AppColors.white,
     secondary: AppColors.secondary,
@@ -244,6 +329,31 @@ class AppTheme {
 
   /// 다크 모드 텍스트 테마
   static TextTheme get _darkTextTheme {
+    return GoogleFonts.interTextTheme().copyWith(
+      displayLarge: AppTypography.displayLarge.copyWith(color: AppColors.white),
+      displayMedium:
+          AppTypography.displayMedium.copyWith(color: AppColors.white),
+      displaySmall: AppTypography.displaySmall.copyWith(color: AppColors.white),
+      headlineLarge:
+          AppTypography.headlineLarge.copyWith(color: AppColors.white),
+      headlineMedium:
+          AppTypography.headlineMedium.copyWith(color: AppColors.white),
+      headlineSmall:
+          AppTypography.headlineSmall.copyWith(color: AppColors.white),
+      titleLarge: AppTypography.titleLarge.copyWith(color: AppColors.white),
+      titleMedium: AppTypography.titleMedium.copyWith(color: AppColors.grey),
+      titleSmall: AppTypography.titleSmall.copyWith(color: AppColors.grey),
+      bodyLarge: AppTypography.bodyLarge.copyWith(color: AppColors.white),
+      bodyMedium: AppTypography.bodyMedium.copyWith(color: AppColors.grey),
+      bodySmall: AppTypography.bodySmall.copyWith(color: AppColors.grey),
+      labelLarge: AppTypography.labelLarge.copyWith(color: AppColors.white),
+      labelMedium: AppTypography.labelMedium.copyWith(color: AppColors.grey),
+      labelSmall: AppTypography.labelSmall.copyWith(color: AppColors.grey),
+    );
+  }
+
+  /// 블랙 모드 텍스트 테마
+  static TextTheme get _blackTextTheme {
     return GoogleFonts.interTextTheme().copyWith(
       displayLarge: AppTypography.displayLarge.copyWith(color: AppColors.white),
       displayMedium:
